@@ -34,4 +34,4 @@ Other syntax:
 - Commas
 - Booleans
 
-[The Discord Server has been deleted.]
+For a full documentation, head to https://blazecat341234.gitbook.io/blazecat341234-docs/ to see the Gitbook!
