@@ -8,7 +8,7 @@
 - Navigate to directory
 - Execute `python3 -m pyplus examples/hello.pyplus` to run the file `examples/hello.pyplus`
 
-## Syntax for v0.5 Beta
+## Syntax for v0.5
 
 To declare variables:
 ```
