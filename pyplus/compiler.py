@@ -7,8 +7,8 @@ class Compiler:
     def compile(self, code):
         tokens = Lexer(code).tokenize()
 
-        for token in tokens:
-            print(token)
+        #for token in tokens:
+            #print(token)
 
         tree = Parser(tokens).parse()
         python_code = Generator().generate(tree)
