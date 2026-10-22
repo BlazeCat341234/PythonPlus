@@ -1,52 +1,53 @@
 from enum import Enum, auto
+from dataclasses import dataclass as dc
+from typing import Any
 
 
 class TokenType(Enum):
-    PRINT = auto()
+    PRINT           = auto()
 
-    IDENTIFIER = auto()
-    IF = auto()
+    IDENTIFIER      = auto()
+    IF              = auto()
 
-    STRING = auto()
-    NUMBER = auto()
+    STRING          = auto()
+    NUMBER          = auto()
 
-    ASSIGN = auto()      # :=
+    ASSIGN          = auto() # :=
 
-    PLUS = auto()
-    MINUS = auto()
-    STAR = auto()
-    SLASH = auto()
+    PLUS            = auto()
+    MINUS           = auto()
+    STAR            = auto()
+    SLASH           = auto()
 
-    TRUE = auto()
-    FALSE = auto()
+    TRUE            = auto()
+    FALSE           = auto()
     
-    LPAREN = auto()
-    RPAREN = auto()
-    COMMA = auto()
+    LPAREN          = auto()
+    RPAREN          = auto()
+    COMMA           = auto()
 
-    FUNCTION = auto()
-    END = auto()
+    FUNCTION        = auto()
+    END             = auto()
 
-    NEWLINE = auto()
-    RETURN = auto()
-    EOF = auto()
+    RETURN          = auto()
+    EOF             = auto()
 
-    EQUAL = auto()          # ==
-    NOT_EQUAL = auto()      # !=
+    EQUAL           = auto() # ==
+    NOT_EQUAL       = auto() # !=
 
-    LESS = auto()           # <
-    LESS_EQUAL = auto()     # <=
+    LESS            = auto() # <
+    LESS_EQUAL      = auto() # <=
 
-    GREATER = auto()        # >
-    GREATER_EQUAL = auto()  # >=
+    GREATER         = auto() # >
+    GREATER_EQUAL   = auto() # >=
 
 
+@dc
 class Token:
-    def __init__(self, token_type, value=None, line=1, column=1):
-        self.type = token_type
-        self.value = value
-        self.line = line
-        self.column = column
+    type   : Any
+    value  : Any = None
+    line   : int = 1
+    column : int = 1
 
     def __repr__(self):
         return (

@@ -1,125 +1,62 @@
+from dataclasses import dataclass as dc
+from typing import Any
+
+
+@dc
 class NumberNode:
+    value : Any
 
-    def __init__(self, value):
-        self.value = value
-
-    def __repr__(self):
-        return f"Number({self.value})"
-
-
+@dc
 class StringNode:
+    value : Any
 
-    def __init__(self, value):
-        self.value = value
-
-    def __repr__(self):
-        return f"String({self.value})"
-
+@dc
 class FunctionCallNode:
+    name      : Any
+    arguments : Any
 
-    def __init__(self, name, arguments):
-        self.name = name
-        self.arguments = arguments
-
-    def __repr__(self):
-        return f"Call({self.name}, {self.arguments})"
-
+@dc
 class FunctionDefinitionNode:
+    name       : Any
+    parameters : Any
+    body       : Any
 
-    def __init__(self, name, parameters, body):
-        self.name = name
-        self.parameters = parameters
-        self.body = body
-
-    def __repr__(self):
-        return (
-            f"Function({self.name})"
-        )
-
+@dc
 class VariableNode:
+    name : Any
 
-    def __init__(self, name):
-        self.name = name
-
-    def __repr__(self):
-        return f"Variable({self.name})"
-
-
+@dc
 class BinaryOperationNode:
+    left     : Any
+    operator : Any
+    right    : Any
 
-    def __init__(self, left, operator, right):
-        self.left = left
-        self.operator = operator
-        self.right = right
-
-    def __repr__(self):
-        return (
-            f"BinaryOperation("
-            f"{self.left} {self.operator} {self.right}"
-            f")"
-        )
-
+@dc
 class GroupNode:
+    expression : Any
 
-    def __init__(self, expression):
-        self.expression = expression
-
-    def __repr__(self):
-        return f"Group({self.expression})"
-
+@dc
 class AssignmentNode:
+    name  : Any
+    value : Any
 
-    def __init__(self, name, value):
-        self.name = name
-        self.value = value
-
-    def __repr__(self):
-        return (
-            f"Assignment("
-            f"{self.name} = {self.value}"
-            f")"
-        )
-
+@dc
 class IfNode:
+    condition : Any
+    body      : Any
 
-    def __init__(self, condition, body):
-        self.condition = condition
-        self.body = body
-
-    def __repr__(self):
-        return f"If({self.condition})"
-
+@dc
 class BooleanNode:
+    value : Any
 
-    def __init__(self, value):
-        self.value = value
-
-    def __repr__(self):
-        return f"Boolean({self.value})"
-
+@dc
 class ReturnNode:
+    value : Any
 
-    def __init__(self, value):
-        self.value = value
-
-    def __repr__(self):
-        return f"Return({self.value})"
-
-
+@dc
 class PrintNode:
+    value : Any
 
-    def __init__(self, value):
-        self.value = value
-
-    def __repr__(self):
-        return f"Print({self.value})"
-
+@dc
 class ProgramNode:
-
-    def __init__(self, statements):
-        self.statements = statements
-
-    def __repr__(self):
-        return (
-            f"Program({self.statements})"
-        )
+    statements : Any

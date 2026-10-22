@@ -1,0 +1,90 @@
+
+function table(value)
+    value := int(value * 15)
+    if value == 0  return "." end
+    if value == 1  return ":" end
+    if value == 2  return "-" end
+    if value == 3  return ";" end
+    if value == 4  return "!" end
+    if value == 5  return "/" end
+    if value == 6  return ">" end
+    if value == 7  return ")" end
+    if value == 8  return "|" end
+    if value == 9  return "&" end
+    if value == 10 return "I" end
+    if value == 11 return "H" end
+    if value == 12 return "%" end
+    if value == 13 return "*" end
+    if value == 14 return "#" end
+    if value == 15 return " " end
+end
+
+function loop_x(iY, iX, line)
+    iter := body(iY, iX) 
+    char := table(iter / IterationMax)
+
+    tail := ""
+    if iX < iXmax
+        tail := loop_x(iY, iX + 1, line)
+    end
+
+    return char + tail
+end
+
+function loop_y(iY)
+    line := loop_x(iY, 0, "")
+    print(line)
+
+    if iY < iYmax
+        loop_y(iY + 1)
+    end
+end
+
+function loop(Cy, Cx, iter, Zx, Zy)
+    Zx2 := Zx * Zx
+    Zy2 := Zy * Zy
+
+    if iter >= IterationMax
+        return iter
+    end
+    if (Zx2 + Zy2) >= ER2
+        return iter
+    end
+
+    Zy := 2*Zx*Zy + Cy
+    Zx := Zx2-Zy2 + Cx
+
+    return loop(Cy, Cx, iter+1, Zx, Zy)
+end
+
+function body(iY, iX)
+    Cy := CyMin + iY * PixelHeight
+    Cx := CxMin + iX * PixelWidth
+
+    return loop(Cy, Cx, 0, 0, 0)
+end
+
+
+iXmax := 50
+iYmax := 20
+
+Zoom  := 17 / 10
+
+CxMin := (0-35 / 10) / Zoom
+CxMax := (  15 / 10) / Zoom
+CyMin := (0-20 / 10) / Zoom
+CyMax := (  20 / 10) / Zoom
+
+
+PixelWidth  := (CxMax-CxMin)/iXmax
+PixelHeight := (CyMax-CyMin)/iYmax
+
+IterationMax := 50
+
+EscapeRadius := 2
+ER2 := EscapeRadius * EscapeRadius
+
+loop_y(0)
+
+
+
