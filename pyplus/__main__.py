@@ -1,24 +1,27 @@
+
 from pyplus.compiler import Compiler
 import sys
+from pathlib import Path
 
-# Updated upstream
 if len(sys.argv) < 2:
     print("No source path provided.")
     print("Usage: python3 -m pyplus <source path>")
     sys.exit(1)
 
-with open(sys.argv[1]) as f:
-# =======
-    with open("examples/functions.pyplus") as f:
-    # Stashed changes
-        source = f.read()
+source_path = Path(sys.argv[1])
 
-    compiler = Compiler()
+try:
+    source = source_path.read_text(encoding="utf-8")
+except OSError as error:
+    print(f"Could not read source file: {error}")
+    sys.exit(1)
 
-    python_code = compiler.compile(source)
+compiler = Compiler()
+python_code = compiler.compile(source)
 
-    with open("generated/output.py", "w") as f:
-        f.write(python_code)
+output_path = Path("generated/output.py")
+output_path.parent.mkdir(parents=True, exist_ok=True)
+output_path.write_text(python_code, encoding="utf-8")
 
 print()
 print("Generated Python:")

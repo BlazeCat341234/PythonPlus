@@ -12,3 +12,15 @@ end
 if 5 < 7
     print("7 is bigger than 5.")
 end
+
+if 5 == 5
+    print("5 is equal to 5.")
+end
+
+if 5 == 3
+    print("5 is equal to 3.")
+end
+
+if 5 != 3
+    print("5 is not equal to 3.")
+end
