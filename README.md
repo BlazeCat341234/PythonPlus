@@ -34,5 +34,4 @@ Other syntax:
 - Commas
 - Booleans
 
-## Join the Discord Server!
-Link: https://discord.gg/6krk9C53R
+[The Discord Server has been deleted.]
