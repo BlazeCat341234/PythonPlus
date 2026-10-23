@@ -1,6 +1,6 @@
 # Python+ Changelog
 
-to see the full changelog, please go to the Gitbook at https://app.gitbook.com/o/YOJmoPcxEpbGG0Pz3L3g/sites/site_ZBRtu/s/AzQkDvbu17GhxfSQPT0A/
+to see the full changelog, please go to the Gitbook at https://blazecat341234.gitbook.io/blazecat341234-docs/changelog
 
 ## v0.5 Beta
 - First public release
