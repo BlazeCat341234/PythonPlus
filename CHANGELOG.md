@@ -1,5 +1,7 @@
 # Python+ Changelog
 
+to see the full changelog, please go to the Gitbook at https://app.gitbook.com/o/YOJmoPcxEpbGG0Pz3L3g/sites/site_ZBRtu/s/AzQkDvbu17GhxfSQPT0A/
+
 ## v0.5 Beta
 - First public release
 - Supports functions, if statements, and booleans
